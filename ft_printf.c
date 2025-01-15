@@ -58,6 +58,7 @@ int	ft_printf(const char *fmt, ...)
 			len += ft_print_c(fmt[i]);
 		i++;
 	}
+	va_end(args);
 	return (len);
 }
 /*
@@ -71,7 +72,7 @@ int	main(void)
 	void *p;
 
 	p = NULL;
-	result = ft_printf("%c", 'A');
+	result = ft_printf("Hello World!");
 	printf("\n%d", result);
 	//result2 = printf("%p", p);
 	//printf("%d", result2);

@@ -45,7 +45,7 @@ static void	ft_flags(char type, t_flags *s_flags)
 	else if (type == ' ')
 		s_flags.space = true;*/
 	if (type == '#')
-		s_flags->hash = true;
+		s_flags -> hash = true;
 	/*else if (type == '0')
 		s_flags.zero = true;
 	else if (type = '.')
@@ -92,7 +92,7 @@ int	ft_printf(const char *fmt, ...)
 	{
 		if (fmt[i] == '%')
 		{
-			len += ft_print_b(fmt, i + 1, args);
+			len += ft_print_b(fmt, ++i, args);
 			i++;
 		}
 		else
@@ -106,11 +106,8 @@ int	ft_printf(const char *fmt, ...)
 int	main(void)
 {
 	int result;
-	int result2;
 
-	result = ft_printf("Hello %#x World!", 123);
-	printf("\n%d", result);
-	//result2 = printf("%p", p);
-	//printf("%d", result2);
+	result = ft_printf("%#X", 123);
+	printf("\n%d\n", result);
 	return (0);
 }
