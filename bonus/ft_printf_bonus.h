@@ -15,11 +15,11 @@
 
 # include <stdarg.h>
 # include <unistd.h>
+# include <stdbool.h>
 
 //libraries to remove
 # include <stdio.h>
 # include <stdlib.h>
-# include <stdbool.h>
 
 typedef struct s_flags
 {
@@ -40,6 +40,11 @@ int	ft_print_di(int n);
 int	ft_print_u(unsigned int u);
 int	ft_print_x(unsigned long x, char type);
 
+//int	ft_print_c_flags(char c, t_flags s_flags);
+//int	ft_print_s_flags(char *s, t_flags s_flags);
+//int	ft_print_p_flags(void *pm char type, t_flags s_flags);
+//int	ft_print_di_flags(int n, t_flags s_flags);
+//int	ft_print_u_flags(unsigned int u, t_flags s_flags);
 int ft_print_x_flags(unsigned long x, char type, t_flags s_flags);
 
 #endif

@@ -39,19 +39,19 @@ static int	ft_print_m(t_flags s_flags, int i, char type, va_list args)
 static void	ft_flags(char type, t_flags *s_flags)
 {
 	/*if (type == '-')
-		s_flags.left_adjust = true;*/
+		s_flags -> left_adjust = true;*/
 	/*else if (type == '+')
-		s_flags.plus = true;
+		s_flags -> plus = true;
 	else if (type == ' ')
-		s_flags.space = true;*/
+		s_flags -> space = true;*/
 	if (type == '#')
 		s_flags -> hash = true;
 	/*else if (type == '0')
-		s_flags.zero = true;
+		s_flags -> zero = true;
 	else if (type = '.')
 	{
-		s_flags.width = atoi(); //not correct, create function to determine width and length
-		s_flags.precision = atoi(); //not correct
+		s_flags -> width = atoi(); //not correct, create function to determine width and length
+		s_flags -> precision = atoi(); //not correct
 	}
 	else
 		ft_print_m(fmt, i, type, args); //check if logic is correct*/
@@ -107,7 +107,7 @@ int	main(void)
 {
 	int result;
 
-	result = ft_printf("%#X", 123);
+	result = ft_printf("Hello %#X World!", 123);
 	printf("\n%d\n", result);
 	return (0);
 }
