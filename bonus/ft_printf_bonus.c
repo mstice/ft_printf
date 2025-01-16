@@ -92,7 +92,7 @@ int	ft_printf(const char *fmt, ...)
 	{
 		if (fmt[i] == '%')
 		{
-			len += ft_print_b(fmt, ++i, args);
+			len += ft_print_b(fmt, i + 1, args);
 			i++;
 		}
 		else
@@ -107,7 +107,7 @@ int	main(void)
 {
 	int result;
 
-	result = ft_printf("Hello %#X World!", 123);
+	result = ft_printf("%x", 123);
 	printf("\n%d\n", result);
 	return (0);
 }

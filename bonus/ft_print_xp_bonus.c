@@ -56,15 +56,28 @@ int	ft_print_x(unsigned long x, char type)
 
 int ft_print_x_flags(unsigned long x, char type, t_flags s_flags)
 {
+	int len;
+
+	len = 0;
 	if (s_flags.hash == true && type == 'X')
-		write(1, "0X", 2);
+		len += ft_print_s("0X");
 	else if (s_flags.hash == true && type == 'x')
-		write(1, "0x", 2);
-	else if (s_flags.hash != true && (type == 'x' || type == 'X'))
-		return (ft_print_x(x, type));
-	else
-		return (0);
-	return(2 + ft_print_x(x, type));
+		len += ft_print_s("0x");
+	/*else if (s_flags.width > 0 && s_flags.precision > nbr_len)
+		if (s_flags.precision >= s_flags.width)
+			//pads with 0s for precision - nbr_len;
+		else if (s_flags.precision < s_flags.width && s_flags.left_adjust == true)
+			//adds spaces on the right for width - (precision - nbr_len)
+			//pads with 0s for precision - nbr_len
+		else if (s_flags.precision < s_flags.width && s_flags.left_adjust != true)
+			//pads with 0s for precision - nbr_len
+			//adds spaces on the right for width - (precision - nbr_len)
+	else if (s_flags.width == 0 && s_flags.precision > nbr_len)
+		//pads with 0s for precision - nbr_len
+	else if (s_flags.plus == true || s_flags.space == true)
+		return (0);*/
+	len += ft_print_x(x, type);
+	return(len);
 }
 
 /*
