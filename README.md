@@ -1,25 +1,35 @@
 # ft_printf
 Grade achieved: 122% ✅
+>[!WARNING]
+>One test did not pass for the precision flag
 
 ## ℹ️Description
-- A thin library which reproduces the behaviour of ft_printf()
+- A thin library which reproduces the behaviour of printf() from <stdio.h>
 - No external library functions allowed, except for va_args and write()
   
 ### Mandatory Section:
-- Handles conversions: %c, %p, %u, %d, %i, %x, %X, %%
+- Handles the following conversions: %c, %p, %u, %d, %i, %x, %X, %%
 
-### 🏆Bonus Section:
-- Handles Flags: '-', '0', '.', ' ', '#', '+'
-
-## ⬇️ Installation
-```bash
-sudo apt install cmake
-```
+### 🏆 Bonus Section:
+- Handles the following flags: '-', '0', '.', ' ', '#', '+'
 
 ## 🛠️ Usage
-```cmake
-make
+
+### As an Included Library in a Makefile:
+```Makefile
+# In your Makefile
+FT_PRINTF := <path_to_ft_printf>/libftprintf.a
+
+$(NAME): $(OBJECT_FILES) $(FT_PRINTF)
+		$(CC) $(CFLAGS) $^ -o $(NAME)
+
+$(FT_PRINTF):
+	@make -C <path_to_ft_printf>
+```
+```C
+//In your C file:
+#include "ft_printf.h"
 ```
 
 ## 👥 Author
-Matilda Tice (42: mtice, Github: mstice)  
+Matilda Tice (Github: mstice, 42: mtice)  
